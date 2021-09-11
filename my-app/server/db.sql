@@ -1,8 +1,11 @@
-CREATE TABLE restaurants (
+-- for help \?
+-- list database \l
+-- connect to database \c <database>
+-- 
+
+CREATE TABLE nechromatics (
     id BIGSERIAL NOT NULL,
-    name VARCHAR(50) NOT NULL,
-    location VARCHAR(50) NOT NULL,
-    price_range INT
+    price INT
 );
 
 INSERT INTO restaurants (name, location, price_range) VALUES ('Wendy''s', 'Wyoming', 4);

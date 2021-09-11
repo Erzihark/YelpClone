@@ -27,16 +27,28 @@ app.get("/api/v1/restaurants", async (req, res) => {
 });
 //Server running on localhost, when frontend wants to send an http request
 
-//Get specific restaurant
-app.get("/api/v1/restaurants/:id", (req, res) => {
-    console.log(req.params);
-    res.status(200).json({
-        status: "success",
-        data: {
-            restaurant: "McDonald's"
-        }
-    })
+//Get a restaurant
+app.get("/api/v1/restaurants/:id", async (req, res) => {
+    console.log(req.params.id);
+    try {  
+        // !!! IMPORTANT !!!
+        //The following nomenclature is to prevent SQL injections
+        //This would equal to SELECT * FROM restaurants where id = req.params.id
+        const results = await db.query("SELECT * FROM restaurants where id = $1", [req.params.id]);
+        res.status(200).json({
+            status:"success",
+            data: {
+                restaurant: results.rows[0],
+            },
+        });
+    } catch (error) {
+        console.log(error)
+    }
+
+    
 });
+
+
 
 //Create restaurant
 app.post("/api/v1/restaurants", (req, res) => {
