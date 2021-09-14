@@ -8,16 +8,16 @@ const app = express();
 app.use(morgan("dev"));
 app.use(express.json());
 
-//Get all restaurants
-app.get("/api/v1/restaurants", async (req, res) => {
+//Get all nechromatics
+app.get("/api/v1/nechromatics", async (req, res) => {
     try {
-        const results = await db.query("SELECT * FROM restaurants;")
+        const results = await db.query("SELECT * FROM nechromatics;")
         console.log(results);
         res.status(200).json({
             status: "success",
             results: results.rows.length,
             data: {
-                restaurant: results.rows,
+                nechromatics: results.rows,
             },
         });
     } catch (error) {
@@ -27,18 +27,18 @@ app.get("/api/v1/restaurants", async (req, res) => {
 });
 //Server running on localhost, when frontend wants to send an http request
 
-//Get a restaurant
-app.get("/api/v1/restaurants/:id", async (req, res) => {
+//Get a nechromatic
+app.get("/api/v1/nechromatics/:color", async (req, res) => {
     console.log(req.params.id);
     try {  
         // !!! IMPORTANT !!!
         //The following nomenclature is to prevent SQL injections
-        //This would equal to SELECT * FROM restaurants where id = req.params.id
-        const results = await db.query("SELECT * FROM restaurants where id = $1", [req.params.id]);
+        //This would equal to SELECT * FROM nechromatics where id = req.params.id
+        const results = await db.query("SELECT * FROM nechromatics WHERE color = $1", [req.params.color]);
         res.status(200).json({
             status:"success",
             data: {
-                restaurant: results.rows[0],
+                nechromatics: results.rows[0],
             },
         });
     } catch (error) {
@@ -50,34 +50,50 @@ app.get("/api/v1/restaurants/:id", async (req, res) => {
 
 
 
-//Create restaurant
-app.post("/api/v1/restaurants", (req, res) => {
+//Create nechromatic
+app.post("/api/v1/nechromatics", async (req, res) => {
     console.log(req.body);
-    res.status(201).json({
-        status: "success",
-        data: {
-            restaurant: "McDonald's"
-        }
-    });
+    try {
+        const results = await db.query("INSERT INTO nechromatics (price, color) VALUES ($1, $2);", [req.body.price, req.body.color]);
+        res.status(201).json({
+            status: "success",
+            data: {
+                price: req.body.price,
+                color: req.body.color,
+            }
+        });
+    } catch (error) {
+        console.log(error)
+    }
 });
 
-//Update restaurants
-app.put("/api/v1/restaurants/:id", (req, res) => {
+//Update nechromatics
+app.put("/api/v1/nechromatics/:color", async (req, res) => {
     console.log(req.params.id);
     console.log(req.body);
-    res.status(200).json({
-        status: "success",
-        data: {
-            restaurant: "McDonald's"
-        }
-    });
+    try {
+        const results = await db.query("UPDATE nechromatics SET color = $1 WHERE color = $2 ;", [req.body.new_color, req.params.color])
+        res.status(200).json({
+            status: "success",
+            data: {
+                new_color: req.body.new_color
+            }
+        });
+    } catch (error) {
+        console.log(error);
+    }
 });
 
-//Delete restaurant
-app.delete("/api/v1/restaurants/:id", (req, res) => {
-    res.status(204).json({
-        status: "success"
-    });
+//Delete nechromatic
+app.delete("/api/v1/nechromatics/:id", async (req, res) => {
+    try {
+        const results = db.query("DELETE FROM nechromatics WHERE id = $1 ;", [req.params.id])
+        res.status(204).json({
+            status: "success"
+        });
+    } catch (error){
+        console.log(error)
+    }
 })
 
 const port = process.env.PORT || 3001;
