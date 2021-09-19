@@ -1,3 +1,69 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     background-color: aliceblue;
+    margin: 0;
+}
+
+.header {
+    padding: 5px;
+    text-align:center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+}
+
+.navbar{
+    overflow: hidden;
+    background-color: #333;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+    float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Active/current link */
+.navbar a.active {
+    background-color: #666;
+    color: white;
+}
+
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0;
+    padding: 0;
+}
+
+.social-list__items {
+    margin: 0 .5em;
+}
+
+.social-list__link {
+    padding: .5em
 }
