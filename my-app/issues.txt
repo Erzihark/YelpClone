@@ -1,0 +1,8 @@
+------------------------ GIT COMMANDS -----------------------------------
+git stash --> Undoes changes made in current branch and "stashes" them for later retrieval
+git stash pop --> Retrieves changes made in previous branch
+git checkout -b [branchName] -->  Creates a new branch
+git add . --> Add all modified files to current commit
+git commit -m --> Create a commit with a custom message
+git push origin [branchName] --> Push current commit to github
+git branch -d [branchName] --> Delete named branch
