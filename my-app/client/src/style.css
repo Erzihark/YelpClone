@@ -4,24 +4,60 @@
     box-sizing: border-box;
 }
 
+/* Custom properties */
+
+:root {
+    --ff-primary:'Lato', sans-serif;
+    --ff-secondary:'Karla', monospace;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #50fd00;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
 body {
-    background-color: aliceblue;
+    background-color: var(--clr-dark);
     margin: 0;
 }
 
+/* NAVBAR AND HEADER */
+
 .header {
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-reg);
     padding: 5px;
     text-align:center;
-    background: #1abc9c;
-    color: white;
+    background: var(--clr-light);
+    color: var(--clr-dark);
     font-size: 30px;
 }
 
 .navbar{
     overflow: hidden;
-    background-color: #333;
+    background-color: var(--clr-dark);
     position: sticky;
     position: -webkit-sticky;
+    border: 3px 0 3px 0 solid var(--clr-accent);
     top: 0;
 }
 
@@ -29,10 +65,12 @@ body {
 .navbar a {
     float: left;
     display: block;
-    color: white;
+    color: var(--clr-light);
+    font-family: var(--ff-secondary);
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
+    /*border: 1px solid var(--clr-accent);*/
 }
 
 /* Right-aligned link */
@@ -43,13 +81,13 @@ body {
 /* Change color on hover */
 .navbar a:hover {
     background-color: #ddd;
-    color: black;
+    color: var(--clr-dark);
 }
 
 /* Active/current link */
 .navbar a.active {
     background-color: #666;
-    color: white;
+    color: var(--clr-light);
 }
 
 .social-list {
@@ -66,4 +104,21 @@ body {
 
 .social-list__link {
     padding: .5em
+}
+
+/* NECHROMATIC CARD */
+
+.nechro-query-container {
+    display: flex;
+    margin: 2em;
+}
+
+.nechromatic-card {
+    border: 1px solid var(--clr-accent);
+    padding: 15px;
+    margin: 5px;
+}
+
+.nechromatic-card:hover {
+    background-color: var(--clr-light);
 }

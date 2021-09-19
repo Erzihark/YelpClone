@@ -1,4 +1,4 @@
-import React, {useEffect, useContext, createContext} from "react"
+import React, {useEffect, useContext} from "react"
 import NechromaticFinder from "../apis/NechromaticFinder";
 import {NechromaticsContext} from "../context/NechromaticsContext";
 
@@ -23,25 +23,22 @@ export default function NechromaticsList(props) {
     },[])
 
     return (
-        <div className={"list-group"}>
-            <table className={"table"}>
-                <thead>
-                    <tr>
-                        <th>Nechromatic</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {nechromatics.map(nechromatic => {
-                    return (
-                        <tr>
-                            <td>{nechromatic.id}</td>
-                            <td>{nechromatic.price}</td>
-                            <td>{nechromatic.color}</td>
-                        </tr>
-                        )
-                })}
-                </tbody>
-            </table>
+        <div className={"nechro-query-container"}>
+            {nechromatics.map(nechromatic => {
+                return (
+                    <div className={"nechromatic-card"}>
+                        <div>Id: {nechromatic.id}</div>
+                        <div>Price: {nechromatic.price}</div>
+                        <div>Color: {nechromatic.color}</div>
+                    </div>
+                    )
+            })}
         </div>
     )
 }
+/*
+<tr key={nechromatic.id}>
+                        <td>{nechromatic.id}</td>
+                        <td>{nechromatic.price}</td>
+                        <td>{nechromatic.color}</td>
+                    </tr> */
