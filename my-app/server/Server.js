@@ -1,4 +1,5 @@
 require("dotenv").config(); //For environmental variable access for ports
+const cors = require("cors")
 const express = require("express");
 const morgan = require("morgan");
 const db = require("./db");
@@ -6,13 +7,14 @@ const db = require("./db");
 const app = express();
 
 app.use(morgan("dev"));
+//for solving different domain issue in CORS
+app.use(cors())
 app.use(express.json());
 
 //Get all nechromatics
 app.get("/api/v1/nechromatics", async (req, res) => {
     try {
         const results = await db.query("SELECT * FROM nechromatics;")
-        console.log(results);
         res.status(200).json({
             status: "success",
             results: results.rows.length,
@@ -21,7 +23,6 @@ app.get("/api/v1/nechromatics", async (req, res) => {
             },
         });
     } catch (error) {
-        console.log(error);
     }
     
 });
@@ -29,8 +30,7 @@ app.get("/api/v1/nechromatics", async (req, res) => {
 
 //Get a nechromatic
 app.get("/api/v1/nechromatics/:color", async (req, res) => {
-    console.log(req.params.id);
-    try {  
+    try {
         // !!! IMPORTANT !!!
         //The following nomenclature is to prevent SQL injections
         //This would equal to SELECT * FROM nechromatics where id = req.params.id
@@ -52,7 +52,6 @@ app.get("/api/v1/nechromatics/:color", async (req, res) => {
 
 //Create nechromatic
 app.post("/api/v1/nechromatics", async (req, res) => {
-    console.log(req.body);
     try {
         const results = await db.query("INSERT INTO nechromatics (price, color) VALUES ($1, $2);", [req.body.price, req.body.color]);
         res.status(201).json({
@@ -69,8 +68,6 @@ app.post("/api/v1/nechromatics", async (req, res) => {
 
 //Update nechromatics
 app.put("/api/v1/nechromatics/:color", async (req, res) => {
-    console.log(req.params.id);
-    console.log(req.body);
     try {
         const results = await db.query("UPDATE nechromatics SET color = $1 WHERE color = $2 ;", [req.body.new_color, req.params.color])
         res.status(200).json({
