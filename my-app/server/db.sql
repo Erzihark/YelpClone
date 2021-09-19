@@ -8,4 +8,4 @@ CREATE TABLE nechromatics (
     price INT
 );
 
-INSERT INTO restaurants (name, location, price_range) VALUES ('Wendy''s', 'Wyoming', 4);
+INSERT INTO nechromatics (name, location, price_range) VALUES ('Nechro', 'Matics', 4);
