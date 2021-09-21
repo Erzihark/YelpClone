@@ -6,3 +6,15 @@ git add . --> Add all modified files to current commit
 git commit -m --> Create a commit with a custom message
 git push origin [branchName] --> Push current commit to github
 git branch -d [branchName] --> Delete named branch
+
+----------------------- RESET EVALUATION ---------------------------------
+0. Cerrar todas las instancias de PHPStorm o de cualquier ide de jetbrains
+1. Ves a la carpeta donde guarda los ajustes JetBrain en tu SO: /.config/JetBrains/PhpStorm2020.3/eval
+2. Borrar este fichero PhpStorm203.evaluation.key
+3. Ir a /.config/JetBrains/PhpStorm2020.3/options
+4. Abrir archivo other.xml
+5. Borrar las líneas que tengan "evlsprt"
+6. Ir a la carpeta donde Java guarda las cosas USUARIO/.java/.userPrefs
+7. Borra la carpeta que se llama JetBrains
+
+Para otros IDEs, como WebStorm, sigue los mismos pasos pero en los directorios equivalentes.
