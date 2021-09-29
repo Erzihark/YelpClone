@@ -15,7 +15,8 @@
 
     --clr-light: #fff;
     --clr-dark: #303030;
-    --clr-accent: #50fd00;
+    --clr-accent-dark: #571845;
+    --clr-accent-light: #c70039;
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -40,57 +41,48 @@ body {
     margin: 0;
 }
 
-/* NAVBAR AND HEADER */
-
-.header {
-    font-family: var(--ff-primary);
-    font-weight: var(--fw-reg);
-    padding: 5px;
-    text-align:center;
-    background: var(--clr-dark);
-    color: var(--clr-light);
-    font-size: 30px;
+/* -----------------------------------------------NAVBAR-------------------------------------------------- */
+.nav {
+    transition: all 0.1s linear;
+    position: fixed;
+    z-index: 2000;
+    padding: 10px;
 }
-
-.header_logo {
-    height: 7em;
-}
-
-.navbar{
-    overflow: hidden;
-    background-color: var(--clr-light);
-    position: sticky;
-    position: -webkit-sticky;
-    border: 3px 0 3px 0 solid var(--clr-accent);
-    top: 0;
-}
-
-/* Style the navigation bar links */
-.navbar a {
+.nav a {
     float: left;
     display: block;
-    color: var(--clr-dark);
+    color: var(--clr-light);
     font-family: var(--ff-secondary);
+    font-size: 1.5em;
     text-align: center;
     padding: 14px 20px;
+    margin-right: 1em;
     text-decoration: none;
-    /*border: 1px solid var(--clr-accent);*/
+    z-index: 2;
+}
+.scrollNav {
+    color: var(--clr-dark);
+    transition: all 0.5s ease-in;
+    z-index: 1;
+    background: var(--clr-accent-dark);
+    width: 100%;
+    border-bottom: 1px solid var(--clr-dark);
 }
 
 /* Right-aligned link */
-.navbar a.right {
+.nav a.right {
     float: right;
 }
 
 /* Change color on hover */
-.navbar a:hover {
-    background-color: #ddd;
+.nav a:hover {
+    background-color: var(--clr-accent-dark);
     color: var(--clr-dark);
 }
 
 /* Active/current link */
-.navbar a.active {
-    background-color: #666;
+.nav a.active {
+    background-color: var(--clr-accent-light);
     color: var(--clr-light);
 }
 
@@ -109,20 +101,65 @@ body {
 .social-list__link {
     padding: .5em
 }
+/* -----------------------------------------------ABOUT--------------------------------------------------- */
 
-/* NECHROMATIC CARD */
+.about {
+    background-image: url("images/banner.jpeg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+}
+
+.about-text {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 50%;
+    margin-right: 10%;
+    flex-wrap: wrap;
+    padding: 1em;
+    border-radius: 1em;
+    background: var(--clr-dark);
+    font-size: 3vw;
+    text-align: left;
+    align-content: space-evenly;
+}
+
+/* -----------------------------------------------FINDER-------------------------------------------------- */
+
+.search-bar {
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* -----------------------------------------------NECHROMATIC ENTRY-------------------------------------------------- */
 
 .nechro-query-container {
     display: flex;
+    flex-direction: column;
     margin: 2em;
 }
 
 .nechromatic-card {
-    border: 1px solid var(--clr-accent);
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--clr-accent-light);
     padding: 15px;
     margin: 5px;
 }
 
 .nechromatic-card:hover {
-    background-color: var(--clr-light);
+    background-color: var(--clr-accent-dark);
 }

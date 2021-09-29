@@ -6,7 +6,9 @@ export const NechromaticsContextProvider = (props) => {
 
     const [nechromatics, setNechromatics] = useState([])
 
-    return( //we could use value={{nechromatics}}
+    return(
+        //Context provider makes it so that every child inside the
+        //<context.provider has access to 'value'
         <NechromaticsContext.Provider value={{nechromatics: nechromatics, setNechromatics}}>
             {props.children}
         </NechromaticsContext.Provider>

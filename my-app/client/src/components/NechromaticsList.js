@@ -2,7 +2,7 @@ import React, {useEffect, useContext} from "react"
 import NechromaticFinder from "../apis/NechromaticFinder";
 import {NechromaticsContext} from "../context/NechromaticsContext";
 
-export default function NechromaticsList(props) {
+export default function NechromaticsList() {
 
     const {nechromatics, setNechromatics} = useContext(NechromaticsContext)
 
@@ -26,19 +26,25 @@ export default function NechromaticsList(props) {
         <div className={"nechro-query-container"}>
             {nechromatics.map(nechromatic => {
                 return (
-                    <div className={"nechromatic-card"}>
-                        <div>Id: {nechromatic.id}</div>
-                        <div>Price: {nechromatic.price}</div>
-                        <div>Color: {nechromatic.color}</div>
+                    <div>
+                        <div className={"nechromatic-card"} key={nechromatic.id}>
+                            <div>Id: {nechromatic.id}</div>
+                            <div>Price: {nechromatic.price}</div>
+                            <div>Color: {nechromatic.color}</div>
+                        </div>
+                        <div className={"nechromatic-card"} key={nechromatic.id}>
+                            <div>Id: {nechromatic.id}</div>
+                            <div>Price: {nechromatic.price}</div>
+                            <div>Color: {nechromatic.color}</div>
+                        </div>
+                        <div className={"nechromatic-card"} key={nechromatic.id}>
+                            <div>Id: {nechromatic.id}</div>
+                            <div>Price: {nechromatic.price}</div>
+                            <div>Color: {nechromatic.color}</div>
+                        </div>
                     </div>
                     )
             })}
         </div>
     )
 }
-/*
-<tr key={nechromatic.id}>
-                        <td>{nechromatic.id}</td>
-                        <td>{nechromatic.price}</td>
-                        <td>{nechromatic.color}</td>
-                    </tr> */
