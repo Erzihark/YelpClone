@@ -1,11 +1,19 @@
-import React from "react";
+import React from "react"
+import nechromatic from "../images/nechromatic.jpeg"
 
-export default function About(){
+export default function About() {
     return (
-        <div className={"about"}>
-            <div className={"about-text"}>
-                Pls just buy our nft we live in a 3rd world wasteland and need money to barely survive
-            </div>
+        <div>
+            <section className={"about"}>
+                <img className={"about-img"} src={nechromatic} alt={"about image"}/>
+                <p className={"about-text"}>
+                    Nechromatics is a NFT on the Cardano network
+                    agaerga
+                    asergarggggggggggggggggggggggggggg
+                    gggggggggggggggggggggggggggggggggggggggggggg
+                    ggggggggggggggggggggggggggggggggggggggggggg
+                </p>
+            </section>
         </div>
     )
 }

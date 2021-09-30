@@ -8,7 +8,7 @@ library.add(faTwitter)
 
 export default function Header(){
     return(
-        <div >
+        <div>
             <StickyNav length='20' >
                 <a href={"#"} className={"active"}>Home</a>
                 <a href={"#"} >About</a>

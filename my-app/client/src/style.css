@@ -101,27 +101,56 @@ body {
 .social-list__link {
     padding: .5em
 }
+/* -----------------------------------------------INTRO--------------------------------------------------- */
+
+.intro {
+    position: relative;
+}
+
+.intro img{
+    max-width: 100%;
+}
+
+.intro-img__container {
+    display: inline-block;
+    position: relative;
+
+}
+
+.intro-text {
+    top: 5%;
+    bottom: 5%;
+    left: 60%;
+    right: 5%;
+    position: absolute;
+    padding: 2em;
+    border-radius: 5em;
+    background: var(--clr-light);
+    font-size: 2em;
+    text-align: center;
+
+}
 /* -----------------------------------------------ABOUT--------------------------------------------------- */
 
 .about {
-    background-image: url("images/banner.jpeg");
-    background-size: 100%;
-    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-accent-light);
+    padding: 4em 2em;
     display: flex;
+    justify-content: space-evenly;
 }
 
 .about-text {
-    margin-top: 10%;
-    margin-bottom: 10%;
-    margin-left: 50%;
-    margin-right: 10%;
-    flex-wrap: wrap;
-    padding: 1em;
+    text-align: center;
+    font-family: var(--ff-primary);
+    font-size: 2em;
+    width: 50%;
+}
+
+.about-img {
     border-radius: 1em;
-    background: var(--clr-dark);
-    font-size: 3vw;
-    text-align: left;
-    align-content: space-evenly;
+    width: 50%;
 }
 
 /* -----------------------------------------------FINDER-------------------------------------------------- */
