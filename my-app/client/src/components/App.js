@@ -1,10 +1,10 @@
 import React from "react"
-import Example from "./Example"
 import Header from "./Header";
-import NechromaticsList from "./NechromaticsList";
 //import Searchbar from "./Searchbar";
 import Intro from "./Intro";
 import About from "./About";
+import NechromaticsList from "./NechromaticsList";
+import Footer from "./Footer";
 
 export default function App() {
     return (
@@ -13,7 +13,7 @@ export default function App() {
             <Intro />
             <About />
             <NechromaticsList />
-            <Example />
+            <Footer />
         </div>
     )
 }

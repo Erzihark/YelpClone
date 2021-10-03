@@ -10,8 +10,8 @@ export default function Header(){
     return(
         <div>
             <StickyNav length='20' >
-                <a href={"#"} className={"active"}>Home</a>
-                <a href={"#"} >About</a>
+                <a href={"#introduction"} className={"active"}>Home</a>
+                <a href={"#about-project"} >About</a>
                 <a href={"https://twitter.com/NechromaticsNFT"} className={"right"}>
                     <FontAwesomeIcon icon={['fab', 'twitter']} />
                 </a>

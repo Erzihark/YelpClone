@@ -1,6 +1,7 @@
 import React, {useEffect, useContext} from "react"
 import NechromaticFinder from "../apis/NechromaticFinder";
 import {NechromaticsContext} from "../context/NechromaticsContext";
+import img from "../images/nechromatic.jpeg"
 
 export default function NechromaticsList() {
 
@@ -23,28 +24,21 @@ export default function NechromaticsList() {
     },[])
 
     return (
-        <div className={"nechro-query-container"}>
-            {nechromatics.map(nechromatic => {
-                return (
-                    <div>
-                        <div className={"nechromatic-card"} key={nechromatic.id}>
-                            <div>Id: {nechromatic.id}</div>
-                            <div>Price: {nechromatic.price}</div>
-                            <div>Color: {nechromatic.color}</div>
+        <section className={"nechro-display"}>
+            <div className={"nechro-query-container"}>
+                {nechromatics.map(nechromatic => {
+                    return (
+                        <div>
+                            <div className={"nechromatic-card"} key={nechromatic.id}>
+                                <img className={"nechromatic-card__img"} src={img} height={320} />
+                                <h4 className={"nechromatic-card__txt"}>Id: {nechromatic.id}</h4>
+                                <h4 className={"nechromatic-card__txt"}>Price: {nechromatic.price}</h4>
+                                <h4 className={"nechromatic-card__txt"}>Color: {nechromatic.color}</h4>
+                            </div>
                         </div>
-                        <div className={"nechromatic-card"} key={nechromatic.id}>
-                            <div>Id: {nechromatic.id}</div>
-                            <div>Price: {nechromatic.price}</div>
-                            <div>Color: {nechromatic.color}</div>
-                        </div>
-                        <div className={"nechromatic-card"} key={nechromatic.id}>
-                            <div>Id: {nechromatic.id}</div>
-                            <div>Price: {nechromatic.price}</div>
-                            <div>Color: {nechromatic.color}</div>
-                        </div>
-                    </div>
                     )
-            })}
-        </div>
+                })}
+            </div>
+        </section>
     )
 }
