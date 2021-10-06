@@ -28,7 +28,7 @@ export default function NechromaticsList() {
             <div className={"nechro-query-container"}>
                 {nechromatics.map(nechromatic => {
                     return (
-                        <div>
+                        <div className={"nechromatic-card__container"}>
                             <div className={"nechromatic-card"} key={nechromatic.id}>
                                 <img className={"nechromatic-card__img"} src={img} height={320} />
                                 <h4 className={"nechromatic-card__txt"}>Id: {nechromatic.id}</h4>

@@ -6,13 +6,13 @@ export default function About() {
         <div>
             <section className={"about"} id={"about-project"}>
                 <img className={"about-img"} src={nechromatic} alt={"about image"}/>
-                <h2 className={"about-text"}>
+                <h3 className={"about-text"}>
                     Nechromatics is a NFT on the Cardano network
                     agaerga
                     asergarg ggggggggggg gggggggg ggggggg
                     ggggggg gggggggggg ggggggggggg gggggggg gggggggg
                     gggggggg ggggggggggg ggggggggggg ggggggg gggggg
-                </h2>
+                </h3>
             </section>
         </div>
     )

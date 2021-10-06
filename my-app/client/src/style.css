@@ -17,6 +17,7 @@
     --clr-dark: #303030;
     --clr-accent-dark: #571845;
     --clr-accent-light: #c70039;
+    --clr-accent-golden: #D4AF37;
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -214,7 +215,10 @@ h4 { font-size: var(--fs-h4) }
 .about {
     align-items: center;
     justify-content: center;
-    background-color: var(--clr-accent-light);
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0)
+    ),var(--clr-accent-light);
     padding: 4em 2em;
     display: flex;
     justify-content: space-evenly;
@@ -277,40 +281,64 @@ h4 { font-size: var(--fs-h4) }
     justify-content: space-around;
 }
 
+.nechromatic-card__container {
+    margin: 10px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #ff0000 0%, #fffc00 25%, #34ff00 50%, #00ffef 75%, #6f00ff 100%);
+    background-size: 600% 100%;
+    box-shadow: 0 0 0.625em hsla(0, 0%, 100%, 0.5);
+    animation: spin 3s linear infinite;
+    animation-direction: alternate;
+    -moz-animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+    -ms-animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {background-position: 0%}
+    50% {background-position: 100%}
+    100% {background-position: 0%}
+}
+@-moz-keyframes spin {
+    0% {background-position: 0%}
+    50% {background-position: 100%}
+    100% {background-position: 0%}
+}
+@-webkit-keyframes spin {
+    0% {background-position: 0%}
+    50% {background-position: 100%}
+    100% {background-position: 0%}
+}
+@-ms-keyframes spin {
+    0% {background-position: 0%}
+    50% {background-position: 100%}
+    100% {background-position: 0%}
+}
+
 .nechromatic-card {
-    min-width: 267px;
+    padding: 2px;
+    width: 267px;
     justify-content: center;
-    border: 1px solid var(--clr-accent-light);
+    border-radius: 10px;
     padding: 15px;
     margin: 5px;
+    background: var(--clr-dark);
 }
 
 .nechromatic-card__img {
     border-radius: 1em;
-    box-shadow: var(--bs);
 }
 
 .nechromatic-card__txt {
-    margin: 1em 0;
+    margin: 0.5em 0.5em;
     font-family: var(--ff-secondary);
-    color: var(--clr-accent-light);
+    color: var(--clr-light);
+    text-align: center;
 }
 
 .nechromatic-card:hover {
-    background-color: var(--clr-accent-dark);
+    background-color: var(--clr-accent-light);
 }
-
-/*@media (min-width: 800px) {
-    .nechro-query-container {
-        display: flex;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
-    .nechromatic-card + .nechromatic-card {
-        margin-left: 2em;
-    }
-}*/
 
 /* -----------------------------------------------FOOTER-------------------------------------------------- */
 
@@ -324,10 +352,16 @@ h4 { font-size: var(--fs-h4) }
     flex-direction: row;
     justify-content: space-around;
     margin-top: 2em;
+    border: 2px solid red;
+    height: inherit;
 }
 
 .footer-container__left{
+    margin: auto 0;
+    border: 2px solid red;
 }
 
 .footer-container__right{
+    margin: auto 0;
+    border: 2px solid red;
 }
