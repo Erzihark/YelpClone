@@ -1,5 +1,5 @@
 import React from "react"
-import nechromatic from "../images/nechromatic.jpeg"
+import nechromatic from "../gifs/nechrogif.gif"
 
 export default function About() {
     return (

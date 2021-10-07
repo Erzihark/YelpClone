@@ -93,6 +93,12 @@ body {
     background-color: var(--clr-dark);
     margin: 0;
 }
+
+loader {
+    height: 1000px;
+    color: red;
+    background: #6f00ff;
+}
 /*----------------------------------------------TYPOGRAPHY--------------------------------------------------*/
 /* Typography */
 h1,
@@ -113,28 +119,35 @@ h4 { font-size: var(--fs-h4) }
     transition: all 0.1s linear;
     position: fixed;
     z-index: 2000;
-    padding: 10px;
+    padding: 2px;
+    width: 100%;
 }
 .nav a {
     float: left;
-    border-radius: 0.5em;
+    border-radius: 3em;
     display: block;
     color: var(--clr-light);
     font-family: var(--ff-secondary);
     font-size: var(--fs-h4);
     text-align: center;
-    padding: 14px 20px;
-    margin-right: 1em;
+    padding: 10px;
+    margin:0 0.5em;
     text-decoration: none;
     z-index: 2;
+    transition: all 0.5s ease;
 }
+
 .scrollNav {
     color: var(--clr-dark);
     transition: all 0.5s ease-in;
     z-index: 1;
-    background: var(--clr-accent-dark);
+    background: var(--clr-dark);
     width: 100%;
-    border-bottom: 1px solid var(--clr-dark);
+    border-bottom: 1px solid var(--clr-accent-golden);
+}
+
+.scrollNav a.right{
+    float: right;
 }
 
 /* Right-aligned link */
@@ -144,14 +157,8 @@ h4 { font-size: var(--fs-h4) }
 
 /* Change color on hover */
 .nav a:hover {
-    background-color: var(--clr-accent-dark);
-    color: var(--clr-dark);
-}
-
-/* Active/current link */
-.nav a.active {
-    background-color: var(--clr-accent-light);
-    color: var(--clr-light);
+    background-color: var(--clr-accent-golden);
+    border-radius: 0.2em;
 }
 
 .social-list {
@@ -182,6 +189,7 @@ h4 { font-size: var(--fs-h4) }
     height: 0;
     padding-top: 36%;
     align-items: center;
+    border-bottom: 1px solid var(--clr-accent-golden);
 }
 
 .intro-text__container {
@@ -214,28 +222,34 @@ h4 { font-size: var(--fs-h4) }
 
 .about {
     align-items: center;
-    justify-content: center;
     background: linear-gradient(
             rgba(0, 0, 0, 0.4),
             rgba(0, 0, 0, 0)
     ),var(--clr-accent-light);
-    padding: 4em 2em;
     display: flex;
     justify-content: space-evenly;
     padding: 3em;
     flex-direction: column;
+    border-bottom: 1px solid var(--clr-accent-golden);
 }
 
 .about-text {
     text-align: center;
     font-family: var(--ff-primary);
     padding: 3em;
+    color: black;
+    text-shadow: var(--bs);
 }
 
 .about-img {
     border-radius: 1em;
     max-width: 300px;
     box-shadow: var(--bs);
+    position: static;
+}
+
+about-img:hover {
+    opacity: 0;
 }
 
 @media (min-width: 800px) {
@@ -271,7 +285,7 @@ h4 { font-size: var(--fs-h4) }
 /* -----------------------------------------------NECHROMATIC ENTRY-------------------------------------------------- */
 
 .nechro-display {
-    margin: 3em 0;
+    border-bottom: 1px solid var(--clr-accent-golden);
 }
 
 .nechro-query-container {
@@ -282,7 +296,7 @@ h4 { font-size: var(--fs-h4) }
 }
 
 .nechromatic-card__container {
-    margin: 10px;
+    margin: 5px;
     border-radius: 10px;
     background: linear-gradient(45deg, #ff0000 0%, #fffc00 25%, #34ff00 50%, #00ffef 75%, #6f00ff 100%);
     background-size: 600% 100%;
@@ -316,28 +330,47 @@ h4 { font-size: var(--fs-h4) }
 }
 
 .nechromatic-card {
-    padding: 2px;
     width: 267px;
     justify-content: center;
     border-radius: 10px;
     padding: 15px;
     margin: 5px;
     background: var(--clr-dark);
+    transition: all 1s ease;
 }
 
 .nechromatic-card__img {
-    border-radius: 1em;
+    border-radius: 0.5em;
+}
+
+.nechromatic-card__img:hover {
+
+}
+
+.nechromatic-card__txt-container {
+    margin-top: 5px;
+    background: black;
+    border-radius: 0.5em;
+    font-family: var(--ff-secondary);
+    color: var(--clr-light);
+    text-align: center;
+    padding: 0.5em;
 }
 
 .nechromatic-card__txt {
     margin: 0.5em 0.5em;
-    font-family: var(--ff-secondary);
-    color: var(--clr-light);
-    text-align: center;
+    text-align: left;
+    background:linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.3)
+    ), var(--clr-dark);
+    border-radius: 1em;
+    padding: 0.1em 0 0.1em 0.5em;
 }
 
 .nechromatic-card:hover {
-    background-color: var(--clr-accent-light);
+    background-color: rgba(0, 0, 0, 0);
+    transform: scale(1.05);
 }
 
 /* -----------------------------------------------FOOTER-------------------------------------------------- */
@@ -351,7 +384,6 @@ h4 { font-size: var(--fs-h4) }
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 2em;
     border: 2px solid red;
     height: inherit;
 }

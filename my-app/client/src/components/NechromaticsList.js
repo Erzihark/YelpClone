@@ -31,9 +31,11 @@ export default function NechromaticsList() {
                         <div className={"nechromatic-card__container"}>
                             <div className={"nechromatic-card"} key={nechromatic.id}>
                                 <img className={"nechromatic-card__img"} src={img} height={320} />
-                                <h4 className={"nechromatic-card__txt"}>Id: {nechromatic.id}</h4>
-                                <h4 className={"nechromatic-card__txt"}>Price: {nechromatic.price}</h4>
-                                <h4 className={"nechromatic-card__txt"}>Color: {nechromatic.color}</h4>
+                                <div className={"nechromatic-card__txt-container"}>
+                                    <h4 className={"nechromatic-card__txt"}>Id: {nechromatic.id}</h4>
+                                    <h4 className={"nechromatic-card__txt"}>Price: {nechromatic.price}</h4>
+                                    <h4 className={"nechromatic-card__txt"}>Color: {nechromatic.color}</h4>
+                                </div>
                             </div>
                         </div>
                     )
