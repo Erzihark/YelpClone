@@ -6,13 +6,15 @@ export default function About() {
         <div>
             <section className={"about"} id={"about-project"}>
                 <img className={"about-img"} src={nechromatic} alt={"about image"}/>
-                <h3 className={"about-text"}>
-                    Nechromatics is a NFT on the Cardano network
-                    agaerga
-                    asergarg ggggggggggg gggggggg ggggggg
-                    ggggggg gggggggggg ggggggggggg gggggggg gggggggg
-                    gggggggg ggggggggggg ggggggggggg ggggggg gggggg
-                </h3>
+                <div className={"about-text"}>
+                    <h2 className={"about-text__title"}>
+                        <strong>100 stylish undead</strong>
+                    </h2>
+                    <br/>
+                    <h3>Nechromatics are a colletction of hand-drawn NFT's on
+                    the Solana blockchain. <br/>
+                    All are unique and carefully crafted by our digital artist</h3>
+                </div>
             </section>
         </div>
     )

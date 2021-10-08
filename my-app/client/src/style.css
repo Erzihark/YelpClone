@@ -17,7 +17,7 @@
     --clr-dark: #303030;
     --clr-accent-dark: #571845;
     --clr-accent-light: #c70039;
-    --clr-accent-golden: #D4AF37;
+    --clr-accent-golden: #ffc300;
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -63,7 +63,7 @@ img {
     max-width: 100%;
 }
 
-strong { font-weight: var(--fw-bold)}
+strong { font-weight: var(--fw-bold); color: var(--clr-accent-golden) }
 
 :focus {
     outline: 3px solid var(--clr-accent-light);
@@ -206,8 +206,9 @@ h4 { font-size: var(--fs-h4) }
 .intro-text {
     padding: 1.5em;
     border-radius: 2em;
-    background: var(--clr-light);
     text-align: center;
+    color: var(--clr-light);
+    text-shadow: var(--bs);
 }
 
 @media (max-width: 800px) {
@@ -234,18 +235,23 @@ h4 { font-size: var(--fs-h4) }
 }
 
 .about-text {
-    text-align: center;
-    font-family: var(--ff-primary);
+    font-family: var(--ff-secondary);
     padding: 3em;
     color: black;
     text-shadow: var(--bs);
+    text-align: justify-all;
+}
+
+.about-text__title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: var(--ff-primary);
 }
 
 .about-img {
     border-radius: 1em;
-    max-width: 300px;
+    width: 500px;
     box-shadow: var(--bs);
-    position: static;
 }
 
 about-img:hover {
@@ -256,9 +262,11 @@ about-img:hover {
     .about {
         flex-direction: row;
     }
+}
 
+@media only screen and (max-width: 1000px) {
     .about-img {
-        max-width: 600px;
+        width:300px;
     }
 }
 
@@ -301,32 +309,32 @@ about-img:hover {
     background: linear-gradient(45deg, #ff0000 0%, #fffc00 25%, #34ff00 50%, #00ffef 75%, #6f00ff 100%);
     background-size: 600% 100%;
     box-shadow: 0 0 0.625em hsla(0, 0%, 100%, 0.5);
-    animation: spin 3s linear infinite;
+    animation: spin 5s linear infinite;
     animation-direction: alternate;
-    -moz-animation: spin 1s linear infinite;
-    -webkit-animation: spin 1s linear infinite;
-    -ms-animation: spin 1s linear infinite;
+    -moz-animation: spin 5s linear infinite;
+    -webkit-animation: spin 5s linear infinite;
+    -ms-animation: spin 5s linear infinite;
 }
 
 @keyframes spin {
-    0% {background-position: 0%}
+    0% {background-position: 0}
     50% {background-position: 100%}
-    100% {background-position: 0%}
+    100% {background-position: 0}
 }
 @-moz-keyframes spin {
-    0% {background-position: 0%}
+    0% {background-position: 0}
     50% {background-position: 100%}
-    100% {background-position: 0%}
+    100% {background-position: 0}
 }
 @-webkit-keyframes spin {
-    0% {background-position: 0%}
+    0% {background-position: 0}
     50% {background-position: 100%}
-    100% {background-position: 0%}
+    100% {background-position: 0}
 }
 @-ms-keyframes spin {
-    0% {background-position: 0%}
+    0% {background-position: 0}
     50% {background-position: 100%}
-    100% {background-position: 0%}
+    100% {background-position: 0}
 }
 
 .nechromatic-card {
@@ -339,12 +347,44 @@ about-img:hover {
     transition: all 1s ease;
 }
 
+.nechromatic-card:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
 .nechromatic-card__img {
     border-radius: 0.5em;
 }
 
 .nechromatic-card__img:hover {
+    border-radius: 0.5em;
+    animation: tilt 1s linear infinite;
+    animation-direction: alternate;
+    -moz-animation: tilt 1s linear infinite;
+    -webkit-animation: tilt 1s linear infinite;
+    -ms-animation: tilt 1s linear infinite;
+}
 
+@keyframes tilt {
+    0% {transform: rotateZ(5deg)}
+    49.9% {transform: rotateZ(5deg)}
+    50% {transform: rotateZ(-5deg)}
+    99.9% {transform: rotateZ(-5deg)}
+    100% {transform: rotateZ(5deg)}
+}
+@-moz-keyframes tilt {
+    0% {background-position: 0}
+    50% {background-position: 100%}
+    100% {background-position: 0}
+}
+@-webkit-keyframes tilt {
+    0% {background-position: 0}
+    50% {background-position: 100%}
+    100% {background-position: 0}
+}
+@-ms-keyframes tilt {
+    0% {background-position: 0}
+    50% {background-position: 100%}
+    100% {background-position: 0}
 }
 
 .nechromatic-card__txt-container {
@@ -366,11 +406,6 @@ about-img:hover {
     ), var(--clr-dark);
     border-radius: 1em;
     padding: 0.1em 0 0.1em 0.5em;
-}
-
-.nechromatic-card:hover {
-    background-color: rgba(0, 0, 0, 0);
-    transform: scale(1.05);
 }
 
 /* -----------------------------------------------FOOTER-------------------------------------------------- */
