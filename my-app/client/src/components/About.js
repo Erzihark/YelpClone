@@ -14,7 +14,7 @@ export default function About() {
                     the Solana blockchain.
                     All are unique and carefully designed by our digital artist.</h3>
                 </div>
-                <img className={"about-img"} src={nechromatic} alt={"about image"}/>
+                <img className={"about-img"} src={nechromatic} alt={"about"}/>
             </section>
         </div>
     )
