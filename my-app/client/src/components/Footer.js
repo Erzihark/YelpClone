@@ -1,15 +1,17 @@
 import React from "react";
+import nechro from "../gifs/nechrogif.gif"
 
 export default function Footer(){
     return (
         <footer className={"footer"}>
             <div className={"footer-container"}>
-                <h2 className={"footer-container__left"}>
-                    Cardano
-                </h2>
-                <h3 className={"footer-container__right"}>
-                    Faq
-                </h3>
+                <img src={nechro} className={"footer-container__left"} alt={"spinning nechro"}/>
+                {/*<h2 className={"footer-container__left"}>
+                    Solana
+                </h2>*/}
+                <h1 className={"footer-container__right"}>
+                    Coming soon...
+                </h1>
             </div>
         </footer>
     )
