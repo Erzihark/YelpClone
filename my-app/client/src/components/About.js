@@ -1,5 +1,5 @@
 import React from "react"
-import nechromatic from "../gifs/display.gif"
+import nechro from "../video/display.mp4";
 
 export default function About() {
     return (
@@ -14,7 +14,9 @@ export default function About() {
                     the Solana blockchain.
                     All are unique and carefully designed by our digital artist.</h3>
                 </div>
-                <img className={"about-img"} src={nechromatic} alt={"about"}/>
+                <video className={"about-img"} width={500} autoPlay muted loop>
+                    <source src={nechro} type={"video/mp4"}/>
+                </video>
             </section>
         </div>
     )
