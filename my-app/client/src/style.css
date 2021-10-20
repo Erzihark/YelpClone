@@ -444,6 +444,7 @@ h4 { font-size: var(--fs-h4) }
 }
 
 .footer-container__right{
+    text-align: center;
     margin: auto 0;
     font-family: var(--ff-primary);
     background: linear-gradient(135deg, #ffc300, #ff5733, #be1d5b, #ad1f84);
