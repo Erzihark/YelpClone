@@ -16,7 +16,7 @@ export default function Navbar(){
                 <a href={"https://twitter.com/NechromaticsNFT"} className={"right"}>
                     <FontAwesomeIcon icon={['fab', 'twitter']} />
                 </a>
-                <a href={"https://discord.gg/EnTSwDyDxc"} className={"right"}>
+                <a href={"https://discord.gg/EnTSwDyDxc"} className={"right"} target={"_blank"} rel={"noopener noreferrer"}>
                     <FontAwesomeIcon icon={['fab', 'discord']} />
                 </a>
             </StickyNav>

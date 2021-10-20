@@ -18,6 +18,7 @@
     --clr-accent-dark: #571845;
     --clr-accent-light: #c70039;
     --clr-accent-golden: #ffc300;
+    --clr-accent-cyan: #9df5e0;
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -46,7 +47,7 @@ html {
 /*--------------------------------------------GENERAL STYLES---------------------------------*/
 
 body {
-    background:var(--clr-light);
+    background:var(--clr-accent-dark);
     color: var(--clr-dark);
     margin: 0;
     font-family: var(--ff-primary);
@@ -125,7 +126,7 @@ h4 { font-size: var(--fs-h4) }
     float: left;
     border-radius: 3em;
     display: block;
-    color: var(--clr-light);
+    color: var(--clr-accent-cyan);
     font-family: var(--ff-secondary);
     font-size: var(--fs-h4);
     font-weight: var(--fw-reg);
@@ -138,25 +139,21 @@ h4 { font-size: var(--fs-h4) }
 }
 
 .scrollNav {
-    color: var(--clr-dark);
     transition: all 0.5s ease-in;
     z-index: 1;
     background: var(--clr-dark);
-    width: 100%;
 }
 
 .scrollNav a.right{
     float: right;
 }
 
-/* Right-aligned link */
 .nav a.right {
     float: right;
 }
 
-/* Change color on hover */
 .nav a:hover {
-    background-color: var(--clr-accent-golden);
+    background-color: var(--clr-accent-light);
     border-radius: 0.2em;
 }
 
@@ -192,7 +189,7 @@ h4 { font-size: var(--fs-h4) }
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin-left: 5em;
+    margin: 15em 0 15em 5em;
 }
 
 .intro-text {
@@ -200,7 +197,7 @@ h4 { font-size: var(--fs-h4) }
     padding: 1.5em;
     border-radius: 2em;
     text-align: center;
-    color: var(--clr-light);
+    color: var(--clr-accent-cyan);
     text-shadow: var(--bs);
     font-family: var(--ff-primary);
 }
@@ -248,7 +245,7 @@ h4 { font-size: var(--fs-h4) }
 .about-text {
     font-family: var(--ff-secondary);
     padding: 3em;
-    color: var(--clr-light);
+    color: var(--clr-accent-cyan);
 }
 
 .about-text__title {
@@ -256,13 +253,16 @@ h4 { font-size: var(--fs-h4) }
     text-align: center;
     margin-bottom: 15px;
     font-family: var(--ff-primary);
-    background: linear-gradient(135deg, #571845, #900c3e, #ff5733, #ffc300);
+    background: linear-gradient(135deg,var(--clr-accent-cyan), var(--clr-accent-cyan), #ffc300, #ff5733, #be1d5b, #ad1f84);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .about-text h3 {
     font-weight: var(--fw-reg);
+    background: linear-gradient(90deg, #ffc300, #ff5733);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .about-img {
@@ -309,13 +309,19 @@ h4 { font-size: var(--fs-h4) }
 /* -----------------------------------------------NECHROMATIC ENTRY-------------------------------------------------- */
 
 .nechro-display {
-    background: var(--clr-dark);
+    background: #03011a;
+}
+
+.nechro-display h2{
+    margin: 1.5em 0;
+    color: var(--clr-accent-cyan);
+    text-align: center;
 }
 
 .nechro-query-container {
     display: flex;
     flex-wrap: wrap;
-    margin: 2em;
+    margin: 4em 2em;
     justify-content: space-around;
 }
 
@@ -373,7 +379,7 @@ h4 { font-size: var(--fs-h4) }
 }
 
 .nechromatic-card__img:hover {
-    transform: scale(1.03);
+    border-radius: 1em;
 }
 
 
@@ -389,34 +395,41 @@ h4 { font-size: var(--fs-h4) }
 
 .nechromatic-card__txt {
     margin: 1px;
-    text-align: left;
+    text-align: center;
     background:linear-gradient(
             rgba(0, 0, 0, 0.5),
             rgba(0, 0, 0, 0.3)
     ), var(--clr-dark);
-    padding: 0.1em 0 0.1em 0.5em;
+    padding: 0.1em;
     font-size: 1em;
     font-weight: 300;
 }
 
 .t2 {
-    color: greenyellow;
+    color: #68ea11;
+    text-shadow: 0 1px 1px black;
 }
 .t3 {
-    color: dodgerblue;
+    color: #2271c4;
+    text-shadow: 0 1px 1px black;
 }
 .t4 {
-    color: mediumpurple;
+    color: #682ada;
+    text-shadow: 0 1px 1px black;
 }
 .t5 {
-    color: orangered;
+    color: #ff6a00;
+    text-shadow: 0 1px 1px black;
 }
 
 /* -----------------------------------------------FOOTER-------------------------------------------------- */
 
 .footer {
     height: 600px;
-    background-color:  var(--clr-light);
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0)
+    ),var(--clr-accent-dark);
 }
 
 .footer-container {
@@ -434,6 +447,10 @@ h4 { font-size: var(--fs-h4) }
 .footer-container__right{
     margin: auto 0;
     font-family: var(--ff-primary);
+    background: linear-gradient(135deg, #ffc300, #ff5733, #be1d5b, #ad1f84);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 1em 0;
 }
 
 @media (max-width: 800px) {

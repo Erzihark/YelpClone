@@ -10,7 +10,7 @@ export default function Footer(){
                     Solana
                 </h2>*/}
                 <h1 className={"footer-container__right"}>
-                    Coming soon...
+                    Coming October 30
                 </h1>
             </div>
         </footer>

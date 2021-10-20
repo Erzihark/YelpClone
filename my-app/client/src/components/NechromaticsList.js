@@ -28,7 +28,7 @@ export default function NechromaticsList() {
     },[])*/
 
     return (
-        <section className={"nechro-display"}>
+        <section className={"nechro-display"}> <h2>What will you get?</h2>
             <div className={"nechro-query-container"}>
                 <div className={"nechromatic-card__container"}>
                     <div className={"nechromatic-card"} >
