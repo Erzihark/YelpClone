@@ -34,7 +34,7 @@ export default function NechromaticsList() {
                     <div className={"nechromatic-card"} >
                         <img className={"nechromatic-card__img"} src={t1} alt={"tier1"} height={320} />
                         <div className={"nechromatic-card__txt-container"}>
-                            <h4 className={"nechromatic-card__txt"}>Tier 1</h4>
+                            <h4 className={"nechromatic-card__txt"}>Common</h4>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@ export default function NechromaticsList() {
                     <div className={"nechromatic-card"} >
                         <img className={"nechromatic-card__img"} src={t2} alt={"tier2"} height={320} />
                         <div className={"nechromatic-card__txt-container"}>
-                            <h4 className={"nechromatic-card__txt t2"}>Tier 2</h4>
+                            <h4 className={"nechromatic-card__txt t2"}>Uncommon</h4>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@ export default function NechromaticsList() {
                     <div className={"nechromatic-card"} >
                         <img className={"nechromatic-card__img"} src={t3} alt={"tier3"} height={320} />
                         <div className={"nechromatic-card__txt-container"}>
-                            <h4 className={"nechromatic-card__txt t3"}>Tier 3</h4>
+                            <h4 className={"nechromatic-card__txt t3"}>Rare</h4>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@ export default function NechromaticsList() {
                     <div className={"nechromatic-card"} >
                         <img className={"nechromatic-card__img"} src={t4} alt={"tier4"} height={320} />
                         <div className={"nechromatic-card__txt-container"}>
-                            <h4 className={"nechromatic-card__txt t4"}>Tier 4</h4>
+                            <h4 className={"nechromatic-card__txt t4"}>Epic</h4>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@ export default function NechromaticsList() {
                     <div className={"nechromatic-card"} >
                         <img className={"nechromatic-card__img"} src={t5} alt={"tier5"} height={320} />
                         <div className={"nechromatic-card__txt-container"}>
-                            <h4 className={"nechromatic-card__txt t5"}>Tier 5</h4>
+                            <h4 className={"nechromatic-card__txt t5"}>Legendary</h4>
                         </div>
                     </div>
                 </div>
