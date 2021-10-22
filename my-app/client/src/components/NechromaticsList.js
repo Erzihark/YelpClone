@@ -1,11 +1,11 @@
 import React, {useEffect, useContext} from "react"
 import NechromaticFinder from "../apis/NechromaticFinder";
 import {NechromaticsContext} from "../context/NechromaticsContext";
-import t1 from "../images/t1.jpeg"
-import t2 from "../images/t2.png"
-import t3 from "../images/t3.png"
-import t4 from "../images/t4.png"
-import t5 from "../images/t5.png"
+import t1 from "../images/t1.webp"
+import t2 from "../images/t2.webp"
+import t3 from "../images/t3.webp"
+import t4 from "../images/t4.webp"
+import t5 from "../images/t5.webp"
 
 export default function NechromaticsList() {
 

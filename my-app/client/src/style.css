@@ -175,14 +175,11 @@ h4 { font-size: var(--fs-h4) }
 /* -----------------------------------------------INTRO--------------------------------------------------- */
 
 .intro {
-    /*background-image: url(./images/banner.jpeg);*/
-    background: radial-gradient(ellipse farthest-side at 76% 77%, rgba(59, 54, 51, 0.25) 4%,
-    rgba(255, 255, 255, 0) calc(4% + 1px)), radial-gradient(circle at 76% 40%, #111111 4%, rgba(255, 255, 255, 0) 4.18%),
-    linear-gradient(135deg, #000000 0%, #030a57 50%, #4d4c6b 75%, #000000 100%),
-    radial-gradient(ellipse at 28% 0%, #457e72 0%, rgba(82, 121, 68, 0.5) 100%),
-    linear-gradient(180deg, #000000 0%, #465b88 69%, #a1506f 70%, #030217 100%);
-    background-blend-mode: multiply, luminosity, multiply;
-    color: var(--clr-dark);
+    background-image: url(./images/background.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--clr-dark);
 }
 
 .intro__container {
@@ -221,6 +218,7 @@ h4 { font-size: var(--fs-h4) }
         width: 100px;
     }
 }
+
 
 @media only screen and (max-width: 1000px) {
     .intro-img {
@@ -309,7 +307,13 @@ h4 { font-size: var(--fs-h4) }
 /* -----------------------------------------------NECHROMATIC ENTRY-------------------------------------------------- */
 
 .nechro-display {
-    background: #03011a;
+    background: radial-gradient(ellipse farthest-side at 76% 77%, rgba(59, 54, 51, 0.25) 4%,
+    rgba(255, 255, 255, 0) calc(4% + 1px)), radial-gradient(circle at 76% 40%, #111111 4%, rgba(255, 255, 255, 0) 4.18%),
+    linear-gradient(135deg, #000000 0%, #030a57 50%, #4d4c6b 75%, #000000 100%),
+    radial-gradient(ellipse at 28% 0%, #457e72 0%, rgba(82, 121, 68, 0.5) 100%),
+    linear-gradient(180deg, #000000 0%, #465b88 69%, #a1506f 70%, #030217 100%);
+    background-blend-mode: multiply, luminosity, multiply;
+    color: var(--clr-dark);
 }
 
 .nechro-display h2{
@@ -326,11 +330,11 @@ h4 { font-size: var(--fs-h4) }
 }
 
 .nechromatic-card__container {
-    margin: 5px;
+    margin: 10px 5px;
     border-radius: 10px;
     background: linear-gradient(45deg, #ff0000 0%, #fffc00 25%, #34ff00 50%, #00ffef 75%, #6f00ff 100%);
     background-size: 600% 100%;
-    box-shadow: 0 0 0.625em hsla(0, 0%, 100%, 0.5);
+    box-shadow: 0 0 0.625em hsla(164, 100%, 76%, 0.78);
     animation: spin 5s linear infinite;
     animation-direction: alternate;
     -moz-animation: spin 5s linear infinite;
